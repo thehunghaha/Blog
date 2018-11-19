@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.index');
+});
+
+Route::group(['prefix'=>'admin'],function()
+{	Route::get('/',['as'=>'admin.index','uses'=>'AdminController@index']);
+});
+
+Route::group(['prefix'=>'admin/article'],function()
+{
+	Route::get('/',['as'=>'article.list_post','uses'=>'adminControllerArticle@list_post']);
+	Route::get('add',['as'=>'article.add','uses'=>'adminControllerArticle@add']);
 });
