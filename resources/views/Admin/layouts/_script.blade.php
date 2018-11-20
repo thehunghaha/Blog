@@ -1,7 +1,12 @@
 <script type="text/javascript">
-        $(document).ready(function() {
-            
+
+
+$(document).ready(function(e) {
+
+    // adding tags input in article  
+
 $('#addTagBtn').click(function() {
+    e.preventDefault();
                 $('#tags option:selected').each(function() {
                     $(this).appendTo($('#selectedTags'));
                 });
@@ -11,8 +16,8 @@ $('#addTagBtn').click(function() {
                     $(this).appendTo($('#tags'));
                 });
             });
- $('.tagRemove').click(function(event) {
-                event.preventDefault();
+ $('.tagRemove').click(function() {
+                e.preventDefault();
                 $(this).parent().remove();
             });
             $('ul.tags').click(function() {
@@ -26,6 +31,21 @@ $('#addTagBtn').click(function() {
                     }
                 }
             });
+
+    // Attach Ckeditor 
+
+        ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+    // End attach ckeditor
+
+
+
  
   });
 </script>

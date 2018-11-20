@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
@@ -22,22 +23,17 @@
 
     <!-- Morris Charts CSS -->
     <link href="{{URL::asset('public/css/morris.css')}}" rel="stylesheet">
-
-
-
-    <!-- Custom Fonts -->
-
     <!-- MY STYLE -->
 
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/css/styleAdmin.css') }}">
 
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
+    <!-- CDN  css category editor--> 
+            <script src="{{ URL::asset('public/ckeditor/ckeditor.js') }}"></script>
+
+
+
 
 </head>
 
@@ -67,8 +63,14 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{URL::asset('public/js/sb-admin-2.js')}}"></script>
 
+    <!-- Adding category editor --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-
+ <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
 </body>
 
 </html>

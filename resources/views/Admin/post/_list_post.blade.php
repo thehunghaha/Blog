@@ -9,7 +9,7 @@
 
 	<div class="row">
 		<h1 style="float: left;">Bài viết</h1>
-		<button type="button" class="btn btn-info add_post" style="padding: 0px;" >Thêm bài viết</button>
+		<a  type="button" href="{{ route('article.add') }}" class="btn btn-info add_post" style="padding: 0px;" >Thêm bài viết</a>
 		<input type="text" class="form-control" name="search_article" id="seach_article">
 		<button type="button" class="btn btn-warning" id="click_search_article">Tìm bài viết</button>
 	</div>

@@ -242,10 +242,10 @@
                     <a href="#"><i class="fa fa-cog fa-spin"></i> Bài viết<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Tất cả bài viết</a>
+                            <a href="{{ URL::route('article.list_post') }}">Tất cả bài viết</a>
                         </li>
                         <li>
-                            <a href="morris.html">Thêm mới bài viết</a>
+                            <a href="{{ URL::route('article.add') }}">Thêm mới bài viết</a>
                         </li>
                         <li>
                             <a href="morris.html">Danh mục bài viết</a>
